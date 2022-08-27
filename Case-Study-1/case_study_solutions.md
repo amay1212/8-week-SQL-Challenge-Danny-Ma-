@@ -2,8 +2,6 @@
 
 ## Solution
 
-[View the complete code](my link)
-
 ***
 
 ### 1. What is the total amount each customer spent at the restaurant?
@@ -303,6 +301,58 @@ FROM   points_table 
 | B           | 820 |
 
 - Total points for Customer A and B are 1,370 and 820 respectivly.
+
+### Bonus Question
+
+#### Part 1: Join All Things
+
+SELECT s.customer_id,
+       s.order_date,
+       m.product_name,
+       m.price,
+       CASE
+         WHEN s.order_date BETWEEN me.join_date AND ME.join_date + 6 THEN 'Y'
+         ELSE 'N'
+       END AS member
+FROM   sales s
+       JOIN menu m
+         ON s.product_id = m.product_id
+       LEFT JOIN members me
+              ON s.customer_id = me.customer_id
+ORDER  BY customer_id,
+          s.order_date,
+          m.product_name 
+
+
+#### Part 2: Rank All Things
+
+SELECT A.customer_id,
+       A.order_date,
+       A.product_name,
+       A.member,
+       CASE
+         WHEN member = 'N' THEN NULL
+         ELSE Rank ()
+                OVER(
+                  partition BY customer_id, member
+                  ORDER BY order_date)
+       END AS ranking
+FROM   (SELECT s.customer_id,
+               s.order_date,
+               m.product_name,
+               m.price,
+               CASE
+                 WHEN me.join_date > s.order_date THEN 'N'
+                 WHEN me.join_date <= s.order_date THEN 'Y'
+               END AS member
+        FROM   sales s
+               JOIN menu m
+                 ON s.product_id = m.product_id
+               LEFT JOIN members me
+                      ON s.customer_id = me.customer_id
+        ORDER  BY customer_id,
+                  s.order_date,
+                  m.product_name) A 
 
 ***
 
