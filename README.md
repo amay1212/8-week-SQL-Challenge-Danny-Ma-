@@ -2,7 +2,7 @@
 <img src="https://user-images.githubusercontent.com/26268796/187030142-f7b24fdd-8868-4fa6-8d72-1b9f47a22bca.png" alt="Image" width="500" height="520">
 
 
-Navigate to [**case study**](https://8weeksqlchallenge.com/case-study-1/) and my [**solution**]
+Navigate to [**case study**](https://8weeksqlchallenge.com/case-study-1/) and my [**solution**](https://github.com/amay1212/8-week-SQL-Challenge-Danny-Ma-/blob/main/Case-Study-1/case_study_solutions.md)
 
 ### Business Task:
 Danny wants to use the data to answer a few simple questions about his customers, especially about their visiting patterns, how much money they’ve spent and also which menu items are their favourite. 
@@ -32,6 +32,19 @@ Click here to expand!
     not just sushi - how many points do customer A and B have at the end of January?
 
 ### Bonus Questions 
+
+#### Join All Things
+
+The following questions are related creating basic data tables that Danny and his team can use to quickly derive insights without needing to join the underlying tables using SQL.
+
+Recreate the following table output using the available data:
+![member_or_not](https://user-images.githubusercontent.com/26268796/187031999-deed8e84-6dc9-44d1-a712-c0717d069575.png)
+
+#### Rank All The Things
+
+Danny also requires further information about the ranking of customer products, but he purposely does not need the ranking for non-member purchases so he expects null ranking values for the records when customers are not yet part of the loyalty program.
+![ranking_table](https://user-images.githubusercontent.com/26268796/187032031-1b95cb10-1bfe-40bc-a3b0-5a446f430c7b.png)
+
 
 ***
 
