@@ -305,7 +305,7 @@ FROM   points_table 
 ### Bonus Question
 
 #### Part 1: Join All Things
-
+````sql
 SELECT s.customer_id,
        s.order_date,
        m.product_name,
@@ -321,8 +321,8 @@ FROM   sales s
               ON s.customer_id = me.customer_id
 ORDER  BY customer_id,
           s.order_date,
-          m.product_name 
-
+          m.product_name
+````
 
 #### Part 2: Rank All Things
 
@@ -352,7 +352,8 @@ FROM   (SELECT s.customer_id,
                       ON s.customer_id = me.customer_id
         ORDER  BY customer_id,
                   s.order_date,
-                  m.product_name) A 
+                  m.product_name) A
+````
 
 ***
 
