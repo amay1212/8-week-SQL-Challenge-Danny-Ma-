@@ -326,6 +326,7 @@ ORDER  BY customer_id,
 
 #### Part 2: Rank All Things
 
+````sql
 SELECT A.customer_id,
        A.order_date,
        A.product_name,
